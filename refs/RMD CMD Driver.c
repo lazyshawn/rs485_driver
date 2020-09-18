@@ -1,4 +1,4 @@
-
+#include <stdint.h>
 
 /**
   * @brief  send a Torque control frame via CAN bus

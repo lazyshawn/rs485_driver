@@ -1,8 +1,3 @@
-#include <iostream>
-#include <stdint.h>
-#include <stdio.h>
-
-#include <vector>
 #include "RMD_485_Driver.h"
 /**
   * @brief  send a angle control frame via RS485 bus
