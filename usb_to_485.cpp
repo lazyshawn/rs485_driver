@@ -11,16 +11,6 @@
 
 extern int nFd;
 
-uint8_t Checksumcrc(uint8_t *aData, uint8_t StartIndex, uint8_t DataLength) {
-  uint8_t crc = 0;
-  uint8_t i = 0;
-  for(i=StartIndex; i<(StartIndex + DataLength); i++)
-  {
-   crc +=  aData[i] ;
-  }
-  return crc;
-}
-
 int main(int argc, char **argv) {
   RMD_485_Driver RMD_485_Driver_;
 
@@ -36,10 +26,11 @@ int main(int argc, char **argv) {
     return -1;
   }
 
+  std::cout<<"angleControl_1="<<angleControl_1<<std::endl; 
   RMD_485_Driver_.RS_angleControl_1(Motor_ID, angleControl_1);
 
   sleep(1);
-  RMD_485_Driver_.RS_Motor_off(Motor_ID, p);
+  RMD_485_Driver_.RS_Motor_off(Motor_ID);
 
   close(nFd);
   return 0;

@@ -22,11 +22,11 @@ class RMD_485_Driver {
   // void RS_angleControl_1(uint8_t Motor_ID, int64_t angleControl_1);
   void RS_angleControl_1(uint8_t Motor_ID, int64_t angleControl_1);
   void RS_angleControl_3(uint8_t Motor_ID, uint8_t spinDirection, int16_t angleControl_1, std::vector<uint8_t> &Data);
-  void RS_Motor_off(uint8_t Motor_ID, std::vector<uint8_t> &Data);
+  void RS_Motor_off(uint8_t Motor_ID);
   void RS_Motor_stop(uint8_t Motor_ID, std::vector<uint8_t> &Data);
   void RS_Motor_start(uint8_t Motor_ID);
   int SerialInit();
-  void SerialPush(std::vector<uint8_t> &p);
+  void SerialPush(uint8_t *TxData, uint8_t *RxData, int size[]);
 };
 
 
